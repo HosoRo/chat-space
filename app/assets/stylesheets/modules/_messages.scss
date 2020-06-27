@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+}
+
+// 複数のプロパティを変数でまとめたものです。
+@mixin flex_center {
+  display: flex;
+  align-items: center;
+}
+@mixin flex_space_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+// カラーコードを変数でまとめたものです。
+$dark_blue:#253141;
+$bright_blue: #38aef0;
+$white: #ffffff;
+$light_black: #333333;
+$gray: #999999;
+$dark_gray: #434a54;
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.side_bar {
+  width: 300px;
+  height: 100vh;
+  background-color: $dark_blue;
+  &__user-name{
+    height: 100px;
+    background-color: $dark_blue;
+    @include flex_center;
+    justify-content: space-around;
+    &__top-items {
+      height: 20px;
+      width: 260px;
+      margin: 0 20px;
+      @include flex_space_between;
+      &__name{
+        color: $white;
+        font-size: 16px;
+      }
+      &__icons {
+        display: flex;
+        color: $white;
+        a {
+        text-decoration: none;
+        color: $white;
+        }
+        &__edit{
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  &__group{
+    height: calc( 100vh - 100px);
+    background-color: #2f3e51;
+    color: $white;
+    padding: 0 20px;
+    &__lists{
+      width: 260px;
+      padding: 20px 0 40px;
+      &__top {
+        margin-bottom: 5px;
+        font-size: 15px;
+      }
+      &__bottom {
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+.main_chat {
+  width: calc(100vw - 300px);
+  height: 100vh;
+  &__header {
+    height: 100px;
+    background-color: $white;
+    border-bottom: 1px solid #eeeeee;
+    padding: 0 40px;
+    @include flex_space_between;
+    a {
+      text-decoration: none;
+      color: $bright_blue;
+    }
+    &__group{
+      &__top{
+        margin-top: 35px;
+        font-size: 20px;
+        color: $light_black;
+      }
+      &__bottom{
+        display: flex;
+        margin-top: 15px;
+        font-size: 12px;
+        color: $gray;
+      }
+    &__edit{
+      height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      font-size: 16px;
+      list-style: none;
+      border: 1px solid $bright_blue;
+      color: $bright_blue;
+      @include flex_center;
+    }
+  }
+  }
+  &__message-list {
+    height: calc( 100vh - 190px);
+    background-color: #fafafa;
+    padding: 0 40px;
+    &__top {
+      padding-top: 35px;
+      display: flex;
+      &__name {
+        color: $light_black;
+        font-size: 16px;
+      }
+      &__date {
+        color: $gray;
+        font-size: 12px;
+        padding-left: 5px;
+      }
+    }
+    &__middle {
+      color: $dark_gray;
+      font-size: 14px;
+      margin-top: 12px;
+    }
+    &__bottom {
+      margin-top: 46px;
+      display: flex;
+      &__name {
+        color: $light_black;
+        font-size: 16px;
+      }
+      &__date {
+        color: $gray;
+        font-size: 12px;
+        padding-left: 5px;
+      }
+    &__message {
+      color: $dark_gray;
+      font-size: 14px;
+      margin-top: 12px;
+    }
+    }
+  }
+  .main_chat__message-form{
+    height: 90px;
+    background-color: #d2d2d2;
+    padding: 20px 40px;
+    form {
+      display: flex;
+      .message-box {
+        display: flex;
+        width: 100%;
+        position: relative;
+        &__text {
+          height: 50px;
+          width: 100%;
+          color: $dark_gray;
+          border-style: none;
+          padding: 0 40px 0 10px;
+        }
+        &__image {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 25px;
+          &__file { 
+            display: none;
+          }
+        }
+      }
+      .submit-btn{
+        height: 50px;
+        margin-left: 15px;
+        padding: 0 30px;
+        font-size: 16px;
+        background-color: $bright_blue;
+        border: 1px solid $bright_blue;
+        color: #fff;
+        @include flex_center;
+      }
+    }
+  }
+}

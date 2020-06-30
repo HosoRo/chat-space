@@ -61,6 +61,10 @@ $dark_gray: #434a54;
     background-color: #2f3e51;
     color: $white;
     padding: 0 20px;
+    a {
+      text-decoration: none;
+      color: $white;
+      }
     &__lists{
       width: 260px;
       padding: 20px 0 40px;

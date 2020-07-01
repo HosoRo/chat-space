@@ -103,6 +103,12 @@ $dark_gray: #434a54;
         margin-top: 15px;
         font-size: 12px;
         color: $gray;
+        ul {
+          display: flex;
+          li{
+            padding-right: 5px;
+          }
+        }
       }
     &__edit{
       height: 40px;
@@ -116,45 +122,35 @@ $dark_gray: #434a54;
     }
   }
   }
-  &__message-list {
+  .MessageField {
     height: calc( 100vh - 190px);
     background-color: #fafafa;
-    padding: 0 40px;
-    &__top {
-      padding-top: 35px;
-      display: flex;
-      &__name {
-        color: $light_black;
-        font-size: 16px;
+    padding: 35px 40px 0;
+    overflow: scroll;
+    .MessageBox {
+      margin-bottom: 46px;
+      .MessageInfo {
+        display: flex;
+        &__userName {
+          color: $light_black;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          color: $gray;
+          font-size: 12px;
+          padding-left: 10px;
+        }
       }
-      &__date {
-        color: $gray;
-        font-size: 12px;
-        padding-left: 5px;
-      }
-    }
-    &__middle {
-      color: $dark_gray;
-      font-size: 14px;
-      margin-top: 12px;
-    }
-    &__bottom {
-      margin-top: 46px;
-      display: flex;
-      &__name {
-        color: $light_black;
-        font-size: 16px;
-      }
-      &__date {
-        color: $gray;
-        font-size: 12px;
-        padding-left: 5px;
-      }
-    &__message {
-      color: $dark_gray;
-      font-size: 14px;
-      margin-top: 12px;
-    }
+      .Message {
+        margin-top: 12px;
+        color: #000;
+          &__content {
+            color: $dark_gray;
+            font-size: 14px;
+          }
+        }
+      
     }
   }
   .main_chat__message-form{
@@ -163,23 +159,25 @@ $dark_gray: #434a54;
     padding: 20px 40px;
     form {
       display: flex;
-      .message-box {
+      .form__contents {
         display: flex;
         width: 100%;
         position: relative;
-        &__text {
+        .form__text {
           height: 50px;
           width: 100%;
           color: $dark_gray;
           border-style: none;
           padding: 0 40px 0 10px;
         }
-        &__image {
+        .form__image {
           position: absolute;
           top: 10px;
           right: 10px;
           font-size: 25px;
-          &__file { 
+          .form__icon {
+          }
+          .file { 
             display: none;
           }
         }
@@ -197,3 +195,4 @@ $dark_gray: #434a54;
     }
   }
 }
+

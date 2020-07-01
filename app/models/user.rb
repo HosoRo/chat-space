@@ -7,4 +7,5 @@ class User < ApplicationRecord
   # validates :name, presence: true, uniqueness: true (グループ作成で削除)
   has_many :group_users
   has_many :groups, through: :group_users
+  has_many :messages
 end

@@ -1,5 +1,5 @@
 # DB設計
-<img src="img/test.png" alt="er">
+<img src="https://raw.github.com/wiki/HosoRo/chat-space/img/test.png">
 
 ## usersテーブル
 |Column|Type|Options|

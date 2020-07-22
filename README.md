@@ -1,5 +1,5 @@
 # DB設計
-<img src="./img/test.png" alt="er">
+<img src="img/test.png" alt="er">
 
 ## usersテーブル
 |Column|Type|Options|
